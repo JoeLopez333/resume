@@ -1,5 +1,67 @@
-\documentclass{article}
+\documentclass[letterpaper,MMMyyyy,nonstopmode]{simpleresumecv}
+
+% CV Info
+\newcommand {\CVAuthor}{Joe Lopez}
+\newcommand {\CVTitle}{Joe Lopez's Resume}
+\newcommand {\CVNote}{Resume compiled on {\today} for ...}
+\newcommand {\CVGithub}{https://github.com/JoeLopez333}
+
+% PDF settings and properties
+\hypersetup{
+pdftitle={\CVTitle},
+pdfauthor={\CVAuthor},
+pdfsubject={\CVGithub},
+pdfcreator={XeLaTeX},
+pdfproducer={},
+pdfkeywords={},
+unicode=true,
+bookmarks=true,
+bookmarksopen=true,
+pdfstartview=FitH,
+pdfpagelayout=OneColumn,
+pdfpagemode=UseOutlines,
+hidelinks,
+breaklinks}
+
 \begin{document}
-Joe Lopez Resume
+
+%%%%%%%%%%%%%%%
+% TITLE BLOCK %
+%%%%%%%%%%%%%%%
+
+\Title{\CVAuthor}
+
+\begin{SubTitle}
+    714 N 65th St, Seattle WA 98103
+    \par
+    \href{mailto:joelopezece@gmail.com}{joelopezece@gmail.com}
+    \,\SubBulletSymbol\,
+    +1\,(630)\,618-1217
+    \,\SubBulletSymbol\,
+    \href{\CVGithub}
+    {\url{\CVGithub}}
+\end{SubTitle}
+
+\begin{Body}
+%%%%%%%%%%%%%
+% EDUCATION %
+%%%%%%%%%%%%%
+
+\Section
+{Education}
+{Education}
+{PDF:Education}
+
+\Entry
+\href{illinois.edu}{\textbf{University of Illiois at Urbana-Champaign}}
+
+\Gap
+\BulletItem
+Bachelor's in Computer Engineering
+\hfill
+\DatestampYMD{2017}{8}{15} --
+\DatestampYMD{2021}{6}{15}
+
+\end{Body}
 \end{document}
 
