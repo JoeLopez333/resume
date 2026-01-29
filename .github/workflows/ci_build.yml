@@ -36,13 +36,33 @@ jobs:
             # Latexmk options
             options: -xelatex
             
+      - name: prepare names
+        id: names
+        run: |
+          echo "pdf_file=resume-${{ github.run_number }}.pdf" >> $GITHUB_OUTPUT
+          echo "png_file=resume-${{ github.run_number }}.png" >> $GITHUB_OUTPUT
+
+      - name: rename pdf to include run number
+        run: mv resume.pdf "${{ steps.names.outputs.pdf_file }}"
+
+      - name: install poppler-utils (pdftoppm)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - name: convert first page of pdf -> png
+        run: |
+          prefix="resume-${{ github.run_number }}"
+          # create a PNG from the first page at 300 DPI
+          pdftoppm -png -singlefile -rx 300 -ry 300 "${{ steps.names.outputs.pdf_file }}" "$prefix"
+          # result will be $prefix.png
+          mv "${prefix}.png" "${{ steps.names.outputs.png_file }}"
+
+     
+            
       - name: upload pdf
         uses: actions/upload-artifact@v6.0.0
         with:
-          # Artifact name
-          name: resume-${{ github.run_number }}    # unique per workflow run
-          # A file, directory or wildcard pattern that describes what to upload
-          path: resume.pdf
+          name: "${{ steps.names.outputs.pdf_file }}"
+          path: "${{ steps.names.outputs.pdf_file }}"
           # The desired behavior if no files are found using the provided path.
           if-no-files-found: error # optional, default is warn
           retention-days: 90 # optional
@@ -57,7 +77,47 @@ jobs:
           # If true, hidden files will be included in the artifact. If false, hidden files will be excluded from the artifact.
       
           # include-hidden-files: # optional, default is false
+      - name: upload png artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: "${{ steps.names.outputs.png_file }}"
+          path: "${{ steps.names.outputs.png_file }}"
+          if-no-files-found: error
+          overwrite: true
 
+      - name: publish preview image to repo and update README
+        env:
+          PNG_FILE: ${{ steps.names.outputs.png_file }}
+        run: |
+          set -e
+          mkdir -p docs
+          cp "$PNG_FILE" docs/resume-latest.png
+
+          # Ensure git identity
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Add the image
+          git add docs/resume-latest.png
+
+          # Update README.md to display the preview image.
+          # If README.md already references docs/resume-latest.png, replace that line; otherwise append a short section.
+          if [ -f README.md ]; then
+            if grep -q "docs/resume-latest.png" README.md; then
+              # replace any existing image line that references docs/resume-latest.png with a standardized one
+              sed -i 's|!\[.*docs/resume-latest.png.*|![Resume](docs/resume-latest.png)|g' README.md || true
+            else
+              echo -e "\n## Resume Preview\n\n![Resume](docs/resume-latest.png)\n" >> README.md
+            fi
+            git add README.md
+          else
+            echo -e "# Resume\n\n## Resume Preview\n\n![Resume](docs/resume-latest.png)\n" > README.md
+            git add README.md
+          fi
+
+          # Commit and push (skip CI)
+          git commit -m "Update resume preview image [skip ci]" || echo "No changes to commit"
+          git push
       # Runs a single command using the runners shell
       # - name: build resume
       #   run: latexmk -xelatex -pvc "resume.tex"
