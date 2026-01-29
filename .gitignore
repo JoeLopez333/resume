@@ -1,3 +1,8 @@
 *.dvi
 *.aux
 *.log
+*.fdb_latexmk
+*.fls
+*.out
+*.xdv
+Miscellaneous/
