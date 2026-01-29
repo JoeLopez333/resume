@@ -54,7 +54,7 @@ jobs:
           # create a PNG from the first page at 300 DPI
           pdftoppm -png -singlefile -rx 300 -ry 300 "${{ steps.names.outputs.pdf_file }}" "$prefix"
           # result will be $prefix.png
-          mv "${prefix}.png" "${{ steps.names.outputs.png_file }}"
+          # mv "${prefix}.png" "${{ steps.names.outputs.png_file }}"
 
      
             
