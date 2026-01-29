@@ -32,7 +32,7 @@ breaklinks}
 \Title{\CVAuthor}
 
 \begin{SubTitle}
-    Seattle, WA 98103
+    Seattle, WA
     \par
     \href{mailto:joelopezece@gmail.com}{joelopezece@gmail.com}
     \,\SubBulletSymbol\,
@@ -52,36 +52,39 @@ breaklinks}
 {Work Experience}
 {PDF:WorkExperience}
 
-\Entry
-    \textbf{Microsoft}
-    \hfill
-    \DatestampYM{2021}{9} --
-    \DatestampYM{2025}{5}
-    \newline
-    Redmond, WA
-    \Gap
-    \textit{Firmware Development Engineer}
+\Entry \textbf{Microsoft Corporation}
+    \hfill    \textbf{Redmond, WA}
+\SubSection{Firmware Development Engineer \hfill\DatestampYM{2021}{9} -- \DatestampYM{2023}{7}}{Firmware Development Engineer}{PDF: MS1}
+
+    % \Gap
     \BulletItem Developed UEFI firmware for PCIe hardware intialization on company's first purpose-built ARM server platform, Cobalt 100. Ported open source libraries and contributed fixes upstream.
     \BulletItem Mitigated boot issues during chip and platform bringup by diagnosing ACPI issues using Windows Debugger (WinDbg) and ACPI tools, releasing a firmware patch in a timely manner to unblock others.
     \BulletItem Led the integration of firmware unit test suite into platform codebase, consuming open source framework and modifying it for our usecase. Worked with internal open-source owners to upstream enhancements for consumption by all first-party and third-party UEFI teams.
-    \BulletItem Leveraged internally developed tool and agentic AI to generate firmware unit tests for previously uncovered lines of code using techniques such as RAG and multi-model approaches to achieve higher efficiency and scale to larger code files.
-
-    
-
-
-\Entry
-    \textbf{Robert Bosch Tool Corporation}
-    \hfill\DatestampYM{2019}{5} -- \DatestampYM{2019}{8}
-    \newline
-    Mount Prospect, IL
+    \BulletItem Integrated pipeline for unit test CI/CD into platform codebase, using code coverage tools to compare coverage statistics against old version.
+    \BulletItem Enhanced platform Reliability, Availability, and Serviceability (RAS) by constructing drivers for PCIe error reporting and handling, including workarounds for various silicon errata.
 
 \Gap
-\textit{Electrical Engineering Intern, Dremel}
-\SubBulletItem
+
+\SubSection{Software Development Engineer 2 \hfill\DatestampYM{2023}{7} -- \DatestampYM{2025}{5}}
+{Software Development Engineer 2 }
+{PDF: MS2}
+    \BulletItem Examined codebase of first-generation product to plan and implement second-gen firmware based on new hardware layout. Developed design plan and distributed work amongst vendor team and oversaw firmware delivery timeline.
+    \BulletItem Leveraged internally developed tool and agentic AI to generate firmware unit tests for previously uncovered lines of code using techniques such as RAG and multi-model approaches to achieve higher efficiency and scale to larger code files.
+    \BulletItem Induced cross-team collaboration by facilitating work forum for PCIe/CXL hardware and software stakeholders for design reviews, bug investigations, and tech talks.
+
+
+\BigGap
+\Entry \textbf{Robert Bosch Tool Corporation (Dremel)}
+    \hfill \textbf{Mount Prospect, IL}
+
+\SubSection{Electrical Engineering Intern \hfill\DatestampYM{2019}{5} -- \DatestampYM{2019}{8}}
+{Electrical Engineering Intern}
+{PDF: Internship}
+\BulletItem
     Collaborated with Electrical and Mechanical engineers to create prototype tool with USB (UART) interface to decrease reliance on bluetooth chips
-\SubBulletItem
+\BulletItem
     Improved data acquisition capacity by rewriting firmware for custom tool logger
-\SubBulletItem
+\BulletItem
     Assembled and diagnosed issues on prototype tools using oscilloscope, multimeter
 %%%%%%%%%%%%%
 % EDUCATION %
@@ -93,17 +96,57 @@ breaklinks}
 {PDF:Education}
 
 \Entry
-\href{https://illinois.edu/}{\textbf{University of Illinois at Urbana-Champaign}}
-\hfill\DatestampYM{2017}{8} -- \DatestampYM{2021}{6}
+\href{https://illinois.edu/}{\textbf{University of Illinois}}\hfill \textbf{Urbana-Champaign, IL}
 
-\Gap
-\BulletItem
-Bachelor's in Computer Engineering
-\BulletItem Theta Tau Professional Engineering Fraternity
-\SubBulletItem Projects Chair 2019-2020
-\BulletItem Illinois Formula Electric
-\SubBulletItem Data Acquisition Lead 2019-2020
-\hfill
+\SubSection {Bachelor's in Computer Engineering \hfill\DatestampYM{2017}{8} -- \DatestampYM{2021}{6}}
+{Bachelor's}
+{PDF: Bachelor's}
+
+\BulletItem Relevant coursework in Systems Programming, Computer Science, Silicon % edit this
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% LEADERSHIP EXPERIENCE %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Section {Leadership Experience}
+{Leadership Experience}
+{PDF: Leadership Experience}
+
+\Entry\textbf{Illini Formula Electric}
+\SubSection {Data Acquisition Lead \hfill\DatestampYM{2019}{8} -- \DatestampYM{2020}{8}}
+{Data Acquisition Lead}
+{PDF: Data Acquisition Lead}
+\BulletItem Revised effectiveness of the previous data acquisition system in order to design a system that logs vehicle data with LORA radio, GPS, Wi-Fi, and serial communication.
+\BulletItem Optimized costs and performance by designing multiple custom PCB's with Altium and implemented logging firmware/software between microcontroller and Raspberry Pi.
+\BigGap
+
+\Entry\textbf{Theta Tau Professional Engineering Fraternity}
+\SubSection {Projects Committee Chair \hfill\DatestampYM{2019}{8} -- \DatestampYM{2020}{6}}
+{Projects Chair}
+{PDF: Projects Chair}
+\BulletItem Managed a committee of 18 members to develop a project for presentation
+\BulletItem Introduced new technologies to the fraternity by hosting a microcontroller workshop
+
+\Section {Skills}{Skills}{PDF: Skills}
+\Entry \textbf{Programming Languages:} C, C++, UEFI Framework, Python, Azure CI/CD, System Verilog, x86
+\Entry \textbf{Embedded Electronics:} ARM, PCIe, STM32, I2C, SPI, UART, CAN
+\Entry \textbf{Miscellaneous:} Altium Designer, Solidworks, GDB, Git, development in Windows/Linux environments
+
+%\Section
+%{Section}
+%{Section}
+%{PDF: Section}
+%
+%\SubSection
+%{Subsection}
+%{SubSection}
+%{PDF: Subsection}
+%
+%\Entry This is Entry 
+%\Item This is item
+%\SubItem This is subitem
+
+
 \end{Body}
 \end{document}
 
