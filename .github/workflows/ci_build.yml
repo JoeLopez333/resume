@@ -93,8 +93,6 @@ jobs:
           PNG_FILE: ${{ steps.names.outputs.png_file }}
         run: |
           set -e
-          mkdir -p docs
-          cp "$PNG_FILE" docs/resume-latest.png
 
           # Ensure git identity
           git config user.name "github-actions[bot]"
@@ -102,6 +100,7 @@ jobs:
           git checkout release
 
           # Add the image
+          cp "$PNG_FILE" docs/resume-latest.png -f
           git add docs/resume-latest.png
 
           # Update README.md to display the preview image.
