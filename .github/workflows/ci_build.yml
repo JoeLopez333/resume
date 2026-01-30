@@ -91,35 +91,40 @@ jobs:
       - name: publish preview image to repo and update README
         env:
           PNG_FILE: ${{ steps.names.outputs.png_file }}
+          PDF_FILE: ${{ steps.names.outputs.pdf_file }}
         run: |
           set -e
 
           # Ensure git identity
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # upload to release branch
           git checkout release
 
-          # Add the image
-          cp "$PNG_FILE" docs/resume-latest.png -f
-          git add docs/resume-latest.png
+          # Git add the image (force to replace the previous version)
+          cp "$PNG_FILE" out/resume-latest.png -f
+          cp "$PDF_FILE" out/resume-latest.pdf -f
+          git add out/resume-latest.png
+          git add out/resume-latest.pdf 
 
           # Update README.md to display the preview image.
-          # If README.md already references docs/resume-latest.png, replace that line; otherwise append a short section.
+          # If README.md already references out/resume-latest.png, replace that line; otherwise append a short section.
           if [ -f README.md ]; then
-            if grep -q "docs/resume-latest.png" README.md; then
-              # replace any existing image line that references docs/resume-latest.png with a standardized one
-              sed -i 's|!\[.*docs/resume-latest.png.*|![Resume](docs/resume-latest.png)|g' README.md || true
+            if grep -q "out/resume-latest.png" README.md; then
+              # replace any existing image line that references out/resume-latest.png with a standardized one
+              sed -i 's|!\[.*out/resume-latest.png.*|![Resume](out/resume-latest.png)|g' README.md || true
             else
-              echo -e "\n## Resume Preview\n\n![Resume](docs/resume-latest.png)\n" >> README.md
+              echo -e "\n## Resume Preview\n\n![Resume](out/resume-latest.png)\n" >> README.md
             fi
             git add README.md
           else
-            echo -e "# Resume\n\n## Resume Preview\n\n![Resume](docs/resume-latest.png)\n" > README.md
+            echo -e "# Resume\n\n## Resume Preview\n\n![Resume](out/resume-latest.png)\n" > README.md
             git add README.md
           fi
 
           # Commit and push (skip CI)
-          git commit -m "Update resume preview image [skip ci]" || echo "No changes to commit"
+          git commit -m "Update resume preview image and pdf [skip ci]" || echo "No changes to commit"
           git push
       # Runs a single command using the runners shell
       # - name: build resume
