@@ -69,12 +69,12 @@
 \ProcessOptions\relax
 
 % Use article class as the base class.
-\LoadClass[10pt,oneside]{article}
+\LoadClass[11pt,oneside]{article}
 
 % Geometry package for page margins.
 \RequirePackage[
-left=0.70in,
-right=0.70in,
+left=0.7in,
+right=0.40in,
 top=0.60in,
 bottom=0.45in,
 nohead,
@@ -169,12 +169,13 @@ BoldItalicFont=FreeSerifBoldItalic]
 
 % Font styles.
 \newcommand{\UseHeadingFont}{\normalfont}
-\newcommand{\UseHeaderFooterFont}{\UseHeadingFont\fontsize{8.2pt}{9.5pt}\selectfont}
-\newcommand{\UseNoteFont}{\UseHeadingFont\fontsize{8pt}{9.6pt}\selectfont}
-\newcommand{\UseTitleFont}{\UseHeadingFont\fontsize{18pt}{33.6pt}\selectfont\bfseries}
-\newcommand{\UseSubTitleFont}{\normalfont\fontsize{8.6pt}{10.3pt}\selectfont}
-\newcommand{\UseSectionFont}{\UseHeadingFont\fontsize{9pt}{11pt}\selectfont\bfseries}
-\newcommand{\UseSubSectionFont}{\UseHeadingFont\fontsize{8.6pt}{10.3pt}\selectfont\bfseries}
+\newcommand{\UseHeaderFooterFont}{\UseHeadingFont\fontsize{11.2pt}{9.5pt}\selectfont}
+\newcommand{\UseNoteFont}{\UseHeadingFont\fontsize{11pt}{9.6pt}\selectfont}
+\newcommand{\UseTitleFont}{\UseHeadingFont\fontsize{21pt}{33.6pt}\selectfont\bfseries}
+\newcommand{\UseSubTitleFont}{\normalfont\fontsize{11pt}{10.3pt}\selectfont}
+\newcommand{\UseSectionFont}{\UseHeadingFont\fontsize{12pt}{13pt}\selectfont\bfseries}
+\newcommand{\UseSubSectionFont}{\UseHeadingFont\fontsize{12pt}{13pt}\selectfont\bfseries}
+\newcommand{\UseSubSubSectionFont}{\normalfont\fontsize{11.6pt}{12.3pt}\selectfont\bfseries}
 \newcommand{\UseDetailFont}{\normalfont\fontsize{8.6pt}{10.3pt}\selectfont}
 
 % Symbols (Unicode).
@@ -243,10 +244,11 @@ BoldItalicFont=FreeSerifBoldItalic]
 \par\vspace{1.5\baselineskip}%
 \begin{list}
 {}
-{\setlength\leftmargin{1.2in}%
+{\setlength\leftmargin{1.4in}%
+%\setlength\oddsidemargin{0.5in}%
 \setlength\rightmargin{0in}%
 \setlength\labelwidth{1.0in}%
-\setlength\labelsep{0in}%
+\setlength\labelsep{.2in}%
 \setlength\listparindent{0in}%
 \setlength\itemindent{0in}%
 \setlength\parskip{0in}%
@@ -270,14 +272,19 @@ BoldItalicFont=FreeSerifBoldItalic]
 
 % Macro: Section (new section for Education, Research Experience, etc.).
 \newcommand{\Section}[3]
-{\par\pdfbookmark[2]{#2}{#3}%
+{\par\pdfbookmark[1]{#2}{#3}%
 \item[\smash{\parbox[t]{1.0in}{\UseSectionFont\raggedright\MakeUppercase{#1}}}]%
 \par}
 
 % Macro: SubSection.
 \newcommand{\SubSection}[3]
+{\par\pdfbookmark[2]{#2}{#3}%
+{\UseSubSectionFont\raggedright{#1}}%
+\par}
+
+\newcommand{\SubSubSection}[3]
 {\par\pdfbookmark[3]{#2}{#3}%
-{\UseSubSectionFont\raggedright\MakeUppercase{#1}}%
+{\UseSubSubSectionFont\raggedright{#1}}%
 \par}
 
 % Macro: Detail (text in smaller font under an item).

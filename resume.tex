@@ -52,41 +52,50 @@ breaklinks}
 {Work Experience}
 {PDF:WorkExperience}
 
-\Entry \textbf{Microsoft Corporation}
-    \hfill    \textbf{Redmond, WA}
-\SubSection{Firmware Development Engineer \hfill\DatestampYM{2021}{9} -- \DatestampYM{2023}{7}}{Firmware Development Engineer}{PDF: MS1}
+\Entry 
+\SubSection{Microsoft Corporation\hfill Redmond, WA}
+{Microsoft}
+{PDF: Microsoft}
 
-    % \Gap
-    \BulletItem Developed UEFI firmware for PCIe hardware intialization on company's first purpose-built ARM server platform, Cobalt 100. Ported open source libraries and contributed fixes upstream.
-    \BulletItem Mitigated boot issues during chip and platform bringup by diagnosing ACPI issues using Windows Debugger (WinDbg) and ACPI tools, releasing a firmware patch in a timely manner to unblock others.
-    \BulletItem Led the integration of firmware unit test suite into platform codebase, consuming open source framework and modifying it for our usecase. Worked with internal open-source owners to upstream enhancements for consumption by all first-party and third-party UEFI teams.
-    \BulletItem Integrated pipeline for unit test CI/CD into platform codebase, using code coverage tools to compare coverage statistics against old version.
-    \BulletItem Enhanced platform Reliability, Availability, and Serviceability (RAS) by constructing drivers for PCIe error reporting and handling, including workarounds for various silicon errata.
-
-\Gap
-
-\SubSection{Software Development Engineer 2 \hfill\DatestampYM{2023}{7} -- \DatestampYM{2025}{5}}
+%% MSFT latest
+\SubSubSection{Software Development Engineer 2 \hfill\DatestampYM{2023}{7} -- \DatestampYM{2025}{5}}
 {Software Development Engineer 2 }
 {PDF: MS2}
-    \BulletItem Examined codebase of first-generation product to plan and implement second-gen firmware based on new hardware layout. Developed design plan and distributed work amongst vendor team and oversaw firmware delivery timeline.    
-    \BulletItem Implemented novel features such as PCIe hot plug according to platform, OS, and protocol specifications. Ensured that no regressions were merged by creating integration tests to exercise different firmware and OS interactions with no human intervention necessary.
-    \BulletItem Leveraged internally developed tool and agentic AI to generate firmware unit tests for previously uncovered lines of code using techniques such as RAG and multi-model approaches to achieve higher efficiency and scale to larger code files.
-    \BulletItem Induced cross-team collaboration by facilitating work forum for PCIe/CXL hardware and software stakeholders for design reviews, bug investigations, and tech talks.
-
+    \BulletItem Planned and implemented second-gen firmware according to new hardware layout. Developed design plan and distributed work amongst vendor team and oversaw firmware delivery timeline.    
+    \BulletItem Implemented and future-proofed novel features such as PCIe hot plug according to specifications, adding integration tests to exercise different software interactions without human intervention.
+    \BulletItem Inspired cross-team collaboration by facilitating work forum for PCIe/CXL hardware and software stakeholders for design reviews, bug investigations, and tech talks.
+    \BulletItem Accelerated development process by leveraging internal tool and agentic AI to generate firmware unit tests for uncovered lines of code using techniques such as RAG and multi-model approaches.
 
 \BigGap
-\Entry \textbf{Robert Bosch Tool Corporation (Dremel)}
-    \hfill \textbf{Mount Prospect, IL}
 
-\SubSection{Electrical Engineering Intern \hfill\DatestampYM{2019}{5} -- \DatestampYM{2019}{8}}
+% MSFT new grad
+\SubSubSection{Firmware Development Engineer \hfill\DatestampYM{2021}{9} -- \DatestampYM{2023}{7}}{Firmware Development Engineer}{PDF: MS1}
+    \BulletItem Developed firmware for PCIe hardware intialization on company's first purpose-built ARM server platform containing first-party Neoverse N2 SoC.
+    \BulletItem Mitigated failures during chip and platform using Windows Debugger (WinDbg) and ACPI tools, releasing a firmware patch to unblock others.
+    \BulletItem Led the integration of firmware unit test suite into platform codebase, consuming open source framework and modifying it for our usecase.
+    \BulletItem Collaborated with internal open-source owners to upstream enhancements for consumption by all first-party and third-party UEFI teams.
+    \BulletItem Integrated pipeline for unit test CI/CD into platform codebase, capturing code coverage statistics and gating new pull requests.
+    \BulletItem Enhanced platform Reliability, Availability, and Serviceability (RAS) by constructing drivers for PCIe error reporting and handling, including workarounds for various silicon errata.
+
+\BigGap
+
+% Dremel
+\Entry 
+\SubSection{Robert Bosch Tool Corporation (Dremel)\hfill Mount Prospect, IL}
+{Dremel}
+{PDF: Dremel}
+\SubSubSection{Electrical Engineering Intern \hfill\DatestampYM{2019}{5} -- \DatestampYM{2019}{8}}
 {Electrical Engineering Intern}
 {PDF: Internship}
 \BulletItem
-    Collaborated with Electrical and Mechanical engineers to create prototype tool with USB (UART) interface to decrease reliance on bluetooth chips
-\BulletItem
-    Improved data acquisition capacity by rewriting firmware for custom tool logger
-\BulletItem
-    Assembled and diagnosed issues on prototype tools using oscilloscope, multimeter
+    Increased data acquisition capacity by rewriting tool firmware for custom logger
+%\BulletItem
+%    Collaborated with Electrical and Mechanical engineers to create prototype tool with USB (UART) interface to decrease reliance on bluetooth chips
+%\BulletItem
+%    Improved data acquisition capacity by rewriting firmware for custom tool logger
+%\BulletItem
+%    Assembled and diagnosed issues on prototype tools using oscilloscope, multimeter
+
 %%%%%%%%%%%%%
 % EDUCATION %
 %%%%%%%%%%%%%
@@ -97,13 +106,16 @@ breaklinks}
 {PDF:Education}
 
 \Entry
-\href{https://illinois.edu/}{\textbf{University of Illinois}}\hfill \textbf{Urbana-Champaign, IL}
+\SubSection{\href{https://illinois.edu/}{University of Illinois}\hfill Urbana-Champaign, IL}
+{University of Illinois}
+{PDF: UIUC}
 
-\SubSection {Bachelor's in Computer Engineering \hfill\DatestampYM{2017}{8} -- \DatestampYM{2021}{6}}
+
+\SubSubSection {Bachelor's in Computer Engineering \hfill\DatestampYM{2017}{8} -- \DatestampYM{2021}{6}}
 {Bachelor's}
 {PDF: Bachelor's}
 
-\BulletItem Relevant coursework in Systems Programming, Computer Science, Silicon % edit this
+% \BulletItem Relevant coursework in Systems Programming, Computer Science, Silicon % edit this
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 % LEADERSHIP EXPERIENCE %
@@ -113,25 +125,28 @@ breaklinks}
 {Leadership Experience}
 {PDF: Leadership Experience}
 
-\Entry\textbf{Illini Formula Electric}
-\SubSection {Data Acquisition Lead \hfill\DatestampYM{2019}{8} -- \DatestampYM{2020}{8}}
+\Entry
+\SubSection{Illini Formula Electric}{Illini Formula Electric}{PDF: Illini Formula Electric}
+\SubSubSection {Data Acquisition Lead \hfill\DatestampYM{2019}{8} -- \DatestampYM{2020}{8}}
 {Data Acquisition Lead}
 {PDF: Data Acquisition Lead}
-\BulletItem Revised effectiveness of the previous data acquisition system in order to design a system that logs vehicle data with LORA radio, GPS, Wi-Fi, and serial communication.
-\BulletItem Optimized costs and performance by designing multiple custom PCB's with Altium and implemented logging firmware/software between microcontroller and Raspberry Pi.
+\BulletItem Led a team to design and implement a data logger for vehicle sensor data.
+%\BulletItem Optimized costs and performance by designing multiple custom PCB's with Altium and implemented logging firmware/software between microcontroller and Raspberry Pi.
 \BigGap
 
-\Entry\textbf{Theta Tau Professional Engineering Fraternity}
-\SubSection {Projects Committee Chair \hfill\DatestampYM{2019}{8} -- \DatestampYM{2020}{6}}
+\Entry
+\SubSection{Theta Tau Professional Engineering Fraternity}{Theta Tau}{PDF: Theta Tau}
+\SubSubSection {Projects Committee Chair \hfill\DatestampYM{2019}{8} -- \DatestampYM{2020}{6}}
 {Projects Chair}
 {PDF: Projects Chair}
 \BulletItem Managed a committee of 18 members to develop a project for presentation
-\BulletItem Introduced new technologies to the fraternity by hosting a microcontroller workshop
+% \BulletItem Introduced new technologies to the fraternity by hosting a microcontroller workshop
 
 \Section {Skills}{Skills}{PDF: Skills}
-\Entry \textbf{Programming Languages:} C, C++, UEFI Framework, Python, Azure CI/CD, System Verilog, x86
+\Entry 
+\textbf{Programming:} C, C++, UEFI Framework, Python, CI/CD, Git, GDB, TRACE32, WinDBG
 \Entry \textbf{Embedded Electronics:} ARM, PCIe, STM32, I2C, SPI, UART, CAN
-\Entry \textbf{Miscellaneous:} Altium Designer, Solidworks, GDB, Git, development in Windows/Linux environments
+% \Entry \textbf{Miscellaneous:} Altium Designer, Solidworks, GDB, Git, development in Windows/Linux environments
 
 %\Section
 %{Section}
